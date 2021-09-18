@@ -18,7 +18,7 @@ int main()
     }
     printf("\n ------------ \n");
 
-    printf("Displaying array before sorting: \n");
+    printf("Displaying array: \n");
     for(i=0; i<size; i++)
     {
         printf("%d ", array[i]);
