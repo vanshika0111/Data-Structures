@@ -10,7 +10,7 @@ int BinarySearch(int arr[], int size, int element)
 {
     int low, mid, high;
     low = 0;
-    high = arr[size-1];
+    high = size-1;
     
     while (low <= high)
     {
