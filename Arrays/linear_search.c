@@ -1,4 +1,4 @@
-// linear search
+// Linear Search
 
 /*
 Linear search can be used to search for a particular element whether the array is sorted or not.
@@ -24,6 +24,6 @@ int main()
     int size = sizeof(arr)/sizeof(int);
     int element = 2;
     int search = LinearSearch(arr, size, element);
-    printf("The element %d was found at index %d", element, search);
+    printf("The element %d was found at index %d \n", element, search);
     return 0;
 }
