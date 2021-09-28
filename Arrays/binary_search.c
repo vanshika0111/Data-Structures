@@ -1,29 +1,36 @@
 // binary search
 
 /*
-Binary search can be used to to search for a particular element whether the array is sorted or not.
+Binary search can be used to search for a particular element only in SORTED array.
 */
 
 #include<stdio.h>
 
-int LinearSearch(int arr[], int size, int element)
+int BinarySearch(int arr[], int size, int element)
 {
-    for (int i=0; i<size; i++)
+    int low, mid, high;
+    while (low <= high)
     {
-        if (arr[i] == element)
+        mid = (low+high)/2;
+        if(arr[mid] == element)
         {
-            return i;
+            return mid;
+        }
+        if(arr[mid] < element)
+        {
+            low = mid + 1;
         }
     }
-    return -1;
+    return -1;  // only if the element is not present in the array
 }
+    
 
 int main()
 {
-    int arr[] = {1,3,8,2,6};
+    int arr[] = {1,3,6,10,44};
     int size = sizeof(arr)/sizeof(int);
-    int element = 2;
-    int search = LinearSearch(arr, size, element);
+    int element = 3;
+    int search = BinarySearch(arr, size, element);
     printf("The element %d was found at index %d", element, search);
     return 0;
 }

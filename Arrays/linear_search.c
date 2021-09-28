@@ -1,7 +1,7 @@
 // linear search
 
 /*
-Linear search can be used to to search for a particular element whether the array is sorted or not.
+Linear search can be used to search for a particular element whether the array is sorted or not.
 */
 
 #include<stdio.h>
