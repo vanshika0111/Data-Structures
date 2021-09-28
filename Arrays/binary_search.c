@@ -9,6 +9,9 @@ Binary search can be used to search for a particular element only in SORTED arra
 int BinarySearch(int arr[], int size, int element)
 {
     int low, mid, high;
+    low = 0;
+    high = arr[size-1];
+    
     while (low <= high)
     {
         mid = (low+high)/2;
