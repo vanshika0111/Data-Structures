@@ -25,14 +25,18 @@ int array[50], i, j, choice, temp, size, new_position, new_element;
 // main function
 int main()
 {
+    // to take the size & elememts of the array
     Array();
 
     printf("Displaying array: \n");
-    Display();    
+    Display();  
+
+    // to take the new element to insert into the array
     InsertElement();
+
+    // to ask for the insertion type
     Choice();
     
-
     printf("Insertion process initiated... \n");
     switch (choice)
     {
