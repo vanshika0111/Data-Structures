@@ -126,13 +126,13 @@ void Position(void)
 
 void SortingInsertion(void)
 {
-    printf("Sorting the array before insertion \n");
+    printf("Sorting the array before insertion. \n");
     for(i=0; i<size; i++)
     {
         for(j=i+1; j<size; j++)
         {
-            if ( array[j] > array[i])     // --> descending order
-            // if ( array[j] < array[i])  // --> ascending order
+            // if ( array[j] > array[i])     // --> descending order
+            if ( array[j] < array[i])        // --> ascending order
             {
                 temp = array[i];
                 array[i] = array[j];
@@ -140,5 +140,15 @@ void SortingInsertion(void)
             }
         }
     }
+    Display();
     printf("Inserting the new element after sorting. \n");
+    for(i=0; i<size; i++)
+    {
+        if (new_element <= array[i])
+        {
+            array[i] = new_element;
+            array[i+1] = array[i+2];
+        }
+        size++;
+    }
 }
