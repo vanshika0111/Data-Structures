@@ -1,4 +1,4 @@
-// push ~ insertion
+// push ~ insertion using array
 
 /*
 Insertion:

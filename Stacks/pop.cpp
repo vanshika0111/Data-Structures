@@ -1,4 +1,4 @@
-// pop ~ deletion
+// pop ~ deletion using array
 
 /*
 Deletion:

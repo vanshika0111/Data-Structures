@@ -1,4 +1,4 @@
-// peek 
+// peek using array
 
 /*
 PEEK
