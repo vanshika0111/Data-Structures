@@ -41,14 +41,13 @@ int main()
     }
     else
     {
-        for(i=size; i>=0; i--)
-        {
-            stack[i]=stack[i-1];
-        }
-        size++;
-        top++;
         stack[top] = new_element;
+        top++;
+        // stack[size] = new_element;
+        // size++;  
     }
+    // size++;
+   
     
     cout << "Dispalying the stack: " << endl;
     for(i=0; i<size; i++)

@@ -15,7 +15,7 @@ using namespace std;
 
 int main()
 {
-    int stack[10], top, i, size, MAX=10;
+    int MAX=10, stack[MAX], top, i, size;
 
     cout << "Enter size of the stack: ";
     cin >> size;
