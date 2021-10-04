@@ -29,9 +29,9 @@ int main()
 
     printf("Displaying array: \n");
     Display();    
-
-    Choice();
     InsertElement();
+    Choice();
+    
 
     printf("Insertion process initiated... \n");
     switch (choice)
@@ -56,10 +56,18 @@ int main()
             printf("Invalid choice! \n");
             break;
     }
-    printf("Insertion completed as per desired choice. \n");
 
-    printf("Displaying the array after insertion: \n");
-    Display();
+    if(choice == ('1' || '2' || '3' || '4') )
+    {
+        printf("Insertion completed as per desired choice. \n");
+        printf("Displaying the array after insertion: \n");
+        Display();
+    }
+    else
+    {
+        printf("Insertion terminated due to invalid choice! \n");
+    }
+    
 
     return 0;
 }
