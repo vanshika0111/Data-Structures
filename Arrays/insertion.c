@@ -2,7 +2,7 @@
 INSERTION
     1. inserting at index 0
     2. insertinf at index -1
-    3. inserting at specific given index
+    3. inserting at specific given index/position
     4. inserting after sorting
 */
 
@@ -10,6 +10,9 @@ INSERTION
 #include<stdio.h>
 
 // function prototype
+void Array(void);
+void Choice(void);
+void InsertElement(void);
 void Display(void);
 void IndexFirst(void);
 void IndexLast(void);
@@ -17,42 +20,18 @@ void Position(void);
 void SortingInsertion(void);
 
 // global declaration
-int array[50], i, j, temp, size, new_position, new_element;
+int array[50], i, j, choice, temp, size, new_position, new_element;
 
 // main function
 int main()
 {
-    int choice;
-
-    printf("Enter the size of array: ");
-    scanf("%d", &size);
-    printf("\n ------------- \n");
-
-    printf("Enter elements of array: \n");
-    for(i=0; i<size; i++)
-    {
-        printf("Enter element %d: ", i+1);
-        scanf("%d", &array[i]);
-    }
-    printf("\n ------------ \n");
+    Array();
 
     printf("Displaying array: \n");
-    Display();
+    Display();    
 
-    printf("Displaying the choice list: \n");
-    printf("1. Inserting at index 0 \n");
-    printf("2. Inserting at index -1 \n");
-    printf("3. Inserting at specific given index \n");
-    printf("4. Inserting after sorting");
-    printf("\n ------------------ \n");
-
-    printf("Enter your choice: ");
-    scanf("%d", &choice);
-    printf("\n -------------- \n");
-
-    printf("Enter an element to insert: ");
-    scanf("%d", &new_element);
-    printf("\n -------------- \n");
+    Choice();
+    InsertElement();
 
     printf("Insertion process initiated... \n");
     switch (choice)
@@ -81,7 +60,43 @@ int main()
 
     printf("Displaying the array after insertion: \n");
     Display();
+
     return 0;
+}
+
+void Array(void)
+{
+    printf("Enter the size of array: ");
+    scanf("%d", &size);
+    printf("\n ------------- \n");
+
+    printf("Enter elements of array: \n");
+    for(i=0; i<size; i++)
+    {
+        printf("Enter element %d: ", i+1);
+        scanf("%d", &array[i]);
+    }
+    printf("\n ------------ \n");
+}
+
+void Choice(void)
+{
+    printf("Displaying the choice list: \n");
+    printf("1. Inserting at index 0 \n");
+    printf("2. Inserting at index -1 \n");
+    printf("3. Inserting at specific given index \n");
+    printf("4. Inserting after sorting");
+    printf("\n ------------------ \n");
+
+    printf("Enter your choice: ");
+    scanf("%d", &choice);
+    printf("\n -------------- \n");
+}
+void InsertElement(void)
+{
+    printf("Enter an element to insert: ");
+    scanf("%d", &new_element);
+    printf("\n -------------- \n");
 }
 
 void Display(void)
