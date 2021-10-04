@@ -141,7 +141,7 @@ void IndexLast(void)
 
 void Position(void)
 {
-    printf("Enter the position for inssertion: ");
+    printf("Enter the position for insertion: ");
     scanf("%d", &new_position);
     for(i=size; i>=new_position; i--)
     {
