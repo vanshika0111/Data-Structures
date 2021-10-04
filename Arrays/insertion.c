@@ -103,14 +103,10 @@ void IndexFirst(void)
 
 void IndexLast(void)
 {
-    for(i=size; i<=new_position; i--)
-    {
-        array[i]=array[i-1];
-    }
-    size++;
 	// array[new_position-1] = new_element;
     // array[-1] = new_element;
     array[size] = new_element;
+    size++;
 }
 
 // void Position(void)
