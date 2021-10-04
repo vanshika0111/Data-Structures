@@ -140,15 +140,33 @@ void SortingInsertion(void)
             }
         }
     }
+    printf("Displaying the array after sorting. \n");
     Display();
     printf("Inserting the new element after sorting. \n");
+    // inserting the element at last index & then sorting the whole array
+    array[size] = new_element;
+    size++;
     for(i=0; i<size; i++)
     {
-        if (new_element <= array[i])
+        for(j=i+1; j<size; j++)
         {
-            array[i] = new_element;
-            array[i+1] = array[i+2];
+            // if ( array[j] > array[i])     // --> descending order
+            if ( array[j] < array[i])        // --> ascending order
+            {
+                temp = array[i];
+                array[i] = array[j];
+                array[j] = temp;
+            }
         }
-        size++;
     }
+    // for(i=0; i<size; i++)
+    // {
+    //     if(new_element <= array[i])
+    //     {
+    //         array[i] = new_element;
+    //         array[new_element] = new_position;
+    //     }
+    //     size++;
+    // }
+    Display();
 }
