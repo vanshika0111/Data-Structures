@@ -70,7 +70,7 @@ int main()
             break;
         case 3:
             printf("3. Inserting at specific given index \n");
-            // Position();
+            Position();
             break;
         case 4:
             printf("4. Inserting after sorting \n");
@@ -105,14 +105,22 @@ void IndexLast(void)
 {
 	// array[new_position-1] = new_element;
     // array[-1] = new_element;
+    // size++;  --> this will increase the size by 1 will always display "0" at -1 index
     array[size] = new_element;
     size++;
 }
 
-// void Position(void)
-// {
-
-// }
+void Position(void)
+{
+    printf("Enter the position for inssertion: ");
+    scanf("%d", &new_position);
+    for(i=size; i>=new_position; i--)
+    {
+        array[i]=array[i-1];
+    }
+    size++;
+	array[new_position-1] = new_element;
+}
 
 // void SortingInsertion(void)
 // {
