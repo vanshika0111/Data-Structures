@@ -1,0 +1,22 @@
+Stack has one pointer --> TOP
+
+Stack can be implemented using arrays or linked lists.
+
+Operations performed in stack are:
+	1. push ~ insertion
+	2. pop ~ deletion
+	3. peek ~ display top-most element
+
+Types of stacks:
+	1. simple stack
+	2. multiple stack
+
+Applications of stack are:
+	1. Reversing a list
+	2. Parantheses checker
+	3. Conversion: infix to postfix
+	4. Evaluation of a postfix
+	5. Conversion: infix to prefix
+	6. Evaluation of a prefix
+	7. Recursion
+	8. Tower of Hanoi
