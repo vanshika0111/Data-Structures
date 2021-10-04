@@ -28,7 +28,7 @@ int main()
     printf("Displaying array: \n");
     Display(); 
 
-    // to ask for the insertion type
+    // to ask for the deletion type
     Choice();
 
     printf("Deletion process initiated... \n");
@@ -44,23 +44,23 @@ int main()
             break;
         case 3:
             printf("3. To delete the element from particular index \n");
-            Position();
+            // Position();
             break;
         default:
             printf("Invalid choice! \n");
             break;
     }
-
-    if(choice == ('1' || '2' || '3') )
-    {
-        printf("Deletion completed as per desired choice. \n");
-        printf("Displaying the array after deletion: \n");
-        Display();
-    }
-    else
-    {
-        printf("Deletion terminated due to invalid choice! \n");
-    }
+    Display();
+    // if(choice == ('1' || '2' || '3') )
+    // {
+    //     printf("Deletion completed as per desired choice. \n");
+    //     printf("Displaying the array after deletion: \n");
+    //     Display();
+    // }
+    // else
+    // {
+    //     printf("Deletion terminated due to invalid choice! \n");
+    // }
     return 0;
 }
 
@@ -101,23 +101,27 @@ void Display (void)
     printf("\n ------------ \n");
 }
 
-// void IndexFirst(void)
-// {
-    
-// }
+void IndexFirst(void)
+{
+    for(i=0; i<size; i++)
+    {
+        array[i-1] = array[i];
+    }
+    size--;
+}
 
 // void IndexLast(void)
 // {
 
 // }
 
-void Position(void)
-{
-    printf("Enter the position for deletion: ");
-    scanf("%d", &delete_position);
-    for(i=0; i<size; i++)
-    {
-        array[i] = array[i+1];
-    }
-    size--;
-}
+// void Position(void)
+// {
+//     printf("Enter the position for deletion: ");
+//     scanf("%d", &delete_position);
+//     for(i=0; i<size; i++)
+//     {
+//         array[i] = array[i+1];
+//     }
+//     size--;
+// }
