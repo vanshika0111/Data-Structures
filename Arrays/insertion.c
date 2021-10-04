@@ -10,13 +10,14 @@ INSERTION
 #include<stdio.h>
 
 // function prototype
+void Display(void);
 void IndexFirst(void);
 void IndexLast(void);
 void Position(void);
 void SortingInsertion(void);
 
 // global declaration
-int array[50], i, size, new_position, new_element;
+int array[50], i, j, temp, size, new_position, new_element;
 
 // main function
 int main()
@@ -36,11 +37,7 @@ int main()
     printf("\n ------------ \n");
 
     printf("Displaying array: \n");
-    for(i=0; i<size; i++)
-    {
-        printf("%d ", array[i]);
-    }
-    printf("\n ------------------- \n");
+    Display();
 
     printf("Displaying the choice list: \n");
     printf("1. Inserting at index 0 \n");
@@ -74,7 +71,7 @@ int main()
             break;
         case 4:
             printf("4. Inserting after sorting \n");
-            // SortingInsertion();
+            SortingInsertion();
             break;
         default:
             printf("Invalid choice! \n");
@@ -83,12 +80,17 @@ int main()
     printf("Insertion completed as per desired choice. \n");
 
     printf("Displaying the array after insertion: \n");
+    Display();
+    return 0;
+}
+
+void Display(void)
+{
     for(i=0; i<size; i++)
     {
         printf("%d ", array[i]);
     }
     printf("\n ------------ \n");
-    return 0;
 }
 
 void IndexFirst(void)
@@ -122,7 +124,21 @@ void Position(void)
 	array[new_position-1] = new_element;
 }
 
-// void SortingInsertion(void)
-// {
-
-// }
+void SortingInsertion(void)
+{
+    printf("Sorting the array before insertion \n");
+    for(i=0; i<size; i++)
+    {
+        for(j=i+1; j<size; j++)
+        {
+            if ( array[j] > array[i])     // --> descending order
+            // if ( array[j] < array[i])  // --> ascending order
+            {
+                temp = array[i];
+                array[i] = array[j];
+                array[j] = temp;
+            }
+        }
+    }
+    printf("Inserting the new element after sorting. \n");
+}
