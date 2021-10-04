@@ -1,4 +1,4 @@
-Stack has one pointer --> TOP
+Stack (LIFO) has one pointer --> TOP
 
 Stack can be implemented using arrays or linked lists.
 
