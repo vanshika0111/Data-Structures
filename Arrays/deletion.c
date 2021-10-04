@@ -28,6 +28,36 @@ int main()
     // to ask for the insertion type
     Choice();
 
+    printf("Deletion process initiated... \n");
+    switch (choice)
+    {
+        case 1:
+            printf("1. To delete the first element \n");
+            
+            break;
+        case 2:
+            printf("2. To delete the last element \n");
+            
+            break;
+        case 3:
+            printf("3. To delete the element from particular index \n");
+            
+            break;
+        default:
+            printf("Invalid choice! \n");
+            break;
+    }
+
+    if(choice == ('1' || '2' || '3') )
+    {
+        printf("Insertion completed as per desired choice. \n");
+        printf("Displaying the array after insertion: \n");
+        Display();
+    }
+    else
+    {
+        printf("Insertion terminated due to invalid choice! \n");
+    }
     return 0;
 }
 
