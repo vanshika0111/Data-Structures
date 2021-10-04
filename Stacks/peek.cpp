@@ -38,12 +38,12 @@ int main()
     if(top == -1)
     {
         cout << "Stack underflow" << endl;
-        // return -1;
+        return -1;
     }
     else
     {
-        cout << "The top-most element of the stack is " << stack[top] << endl;
-        // return stack[top];
+        // cout << "The top-most element of the stack is " << stack[top] << endl;
+        return stack[top];
         
     }
 
