@@ -18,5 +18,5 @@ Applications of stack are:
 	4. Evaluation of a postfix
 	5. Conversion: infix to prefix
 	6. Evaluation of a prefix
-	7. Recursion
+	7. Recursion: factorial, GCD, fibonacci series
 	8. Tower of Hanoi
