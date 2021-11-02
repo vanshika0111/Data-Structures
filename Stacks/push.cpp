@@ -8,6 +8,11 @@ Insertion:
     Else, it give rise to an error of "OVERFLOW".
 */
 
+/*
+     use a do while loop instead of taking two different stacks for both conditions
+     execute first push operation and then check for overflow condiiton
+*/
+
 
 #include<iostream>
 using namespace std;

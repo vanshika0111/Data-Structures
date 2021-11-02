@@ -21,12 +21,16 @@ int main()
         choice_list();
         switch (choice)
         {
-        case 1:
-            push(stack, value);
-            break;
-        
-        default:
-            break;
+            case 1:
+                push(stack, value);
+                break;
+            case 2:
+                value = pop(stack);
+            case 3:
+                value = peek(stack);
+            default:
+                cout << "invalid choice!" << endl;
+                break;
         }
     } while (choice != 5);
     
@@ -57,5 +61,35 @@ int push(int stack[], int value)
         top++;
         stack[top] = value;
         cout << "Value inserted is " << value << endl;
+    }
+}
+
+int pop(int stack[])
+{
+    if (top == -1)
+    {
+        cout << "Stack underflow" << endl;
+        return -1;
+    }
+    else
+    {
+        value = stack[top];
+        top--;
+        cout << "Value deleted from the stack is " << value << endl;
+        return value;
+    }
+}
+
+int peek(int stack[])
+{
+    if(top == -1)
+    {
+        cout << "Stack is empty" << endl;
+        return -1;
+    }
+    else
+    {
+        cout << "The top pointing element of the stack is " << value << endl;
+        return stack[top];
     }
 }

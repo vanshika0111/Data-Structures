@@ -40,6 +40,7 @@ int peek(int stack[])
     }
     else
     {
+        // cout << "The top pointing element of the stack is " << value << endl;
         return stack[top];
     }
 }
