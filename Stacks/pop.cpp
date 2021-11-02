@@ -35,6 +35,7 @@ int pop(int stack[])
     if (top == -1)
     {
         cout << "Stack underflow" << endl;
+        return -1;
     }
     else
     {
