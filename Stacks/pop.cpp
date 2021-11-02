@@ -16,8 +16,8 @@ Deletion:
 using namespace std;
 
 // global declaration
-int stack[MAX] = {}, top=-1, i, value;        // --> for underflow case
-// int stack[MAX] = {1,2,3,4,5}, top=4, i, value;   // --> for deletion case
+// int stack[MAX] = {}, top=-1, i, value;        // --> for underflow case
+int stack[MAX] = {1,2,3,4,5}, top=4, i, value;   // --> for deletion case
 
 // function prototype
 int pop(int stack[]);

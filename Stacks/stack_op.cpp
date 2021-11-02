@@ -12,7 +12,8 @@ void choice_list(void);
 int push(int stack[], int value);
 int pop(int stack[]);
 int peek(int stack[]);
-void display(void);
+void display_push(void);
+void display_pop(void);
 
 int main()
 {
@@ -22,12 +23,25 @@ int main()
         switch (choice)
         {
             case 1:
+                cout << "Enter a number to be pushed into the stack: ";
+                cin >> value;
                 push(stack, value);
+                display_push();
                 break;
             case 2:
                 value = pop(stack);
+                display_pop();
+                break;
             case 3:
                 value = peek(stack);
+                if (value != 1)
+                {
+                    cout << "The top pointing element of the stack is " << value << endl;
+                }
+                break;
+            case 4:
+                exit(0);
+                break;
             default:
                 cout << "invalid choice!" << endl;
                 break;
@@ -43,7 +57,7 @@ void choice_list(void)
     cout << "1. Push" << endl
          << "2. Pop" << endl
          << "3. Peek" << endl
-         << "4. Display" << endl;
+         << "4. Exit" << endl;
     cout << "Enter your choice: ";
     cin >> choice;
     cout << endl;
@@ -89,7 +103,43 @@ int peek(int stack[])
     }
     else
     {
-        cout << "The top pointing element of the stack is " << value << endl;
+        // cout << "The top pointing element of the stack is " << value << endl;
         return stack[top];
+    }
+}
+
+void display_push(void)
+{
+    if (top == -1)
+    {
+        cout << "Stack is empty" << endl;
+    }
+    else
+    {
+        cout << "Stack:" << endl;
+        cout << "[ ";
+        for(i=0; i<MAX; i++)
+        {          
+            cout << stack[i] << " " ;
+        }
+        cout << "]" << endl;
+    }
+}
+
+void display_pop(void)
+{
+    if (top == -1)
+    {
+        cout << "Stack is empty" << endl;
+    }
+    else
+    {
+        cout << "Stack:" << endl;
+        cout << "[ ";
+        for(i=0; i<MAX-1; i++)
+        {          
+            cout << stack[i] << " " ;
+        }
+        cout << "]" << endl;
     }
 }
