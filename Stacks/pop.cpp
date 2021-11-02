@@ -12,41 +12,53 @@ Deletion:
 
 #include<iostream>
 #include<stdlib.h>
+# define MAX 5
 using namespace std;
+
+// global declaration
+int stack[MAX] = {}, top=-1, i, value;        // --> for underflow case
+// int stack[MAX] = {1,2,3,4,5}, top=4, i, value;   // --> for deletion case
+
+// function prototype
+int pop(int stack[]);
+void display(void);
 
 int main()
 {
-    int stack[10], top, i, size, MAX=10;
-    // top=stack[size-1];
-    // top=-1;
+    value = pop(stack);
+    display();
+    return 0;
+}
 
-    cout << "Enter size of the stack: ";
-    cin >> size;
-    cout << endl;
-
-    cout << "Enter elements of the stack: " << endl;
-    for(i=0; i<size; i++)
-    {
-        cout << "Element " << i+1 << ": " ;
-        cin >> stack[i];
-    }
-
-    cout << "Displaying stack: " << endl;
-    for(i=0; i<size; i++)
-    {
-        cout << stack[i] << endl;
-    }
-
-    cout << "Deletion process" << endl;
-    if(top == -1)
+int pop(int stack[])
+{
+    if (top == -1)
     {
         cout << "Stack underflow" << endl;
     }
     else
     {
-        cout << "Deleted element is "<< stack[top] << endl;
+        value = stack[top];
         top--;
+        cout << "Value deleted from the stack is " << value << endl;
+        return value;
     }
+}
 
-    return 0;
+void display(void)
+{
+    if (top == -1)
+    {
+        cout << "Stack is empty" << endl;
+    }
+    else
+    {
+        cout << "Stack:" << endl;
+        cout << "[ ";
+        for(i=0; i<MAX-1; i++)
+        {          
+            cout << stack[i] << " " ;
+        }
+        cout << "]" << endl;
+    }
 }
