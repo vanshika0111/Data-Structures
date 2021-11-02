@@ -14,7 +14,7 @@ int pop(int stack[]);
 int peek(int stack[]);
 void display_push(void);
 void display_pop(void);
-
+// instead use one display function for both push and pop
 int main()
 {
     do
