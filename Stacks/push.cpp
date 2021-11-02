@@ -14,8 +14,8 @@ using namespace std;
 #define MAX 5
 
 // global declaration
-int stack[MAX] = {1,2,3,4}, top=3, i, value;        // --> for insertion case
-// int stack[MAX] = {1,2,3,4,5}, top=4, i, value;   // --> for overflow case
+// int stack[MAX] = {1,2,3,4}, top=3, i, value;        // --> for insertion case
+int stack[MAX] = {1,2,3,4,5}, top=4, i, value;   // --> for overflow case
 
 // function prototype
 int push(int stack[], int value);
