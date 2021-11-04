@@ -47,7 +47,7 @@ int main()
                 cout << "invalid choice!" << endl;
                 break;
         }
-    } while (choice != 5);
+    } while (true);
     
     return 0;
 }
