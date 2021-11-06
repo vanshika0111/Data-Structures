@@ -1,3 +1,6 @@
+// program to convert an infix expression into a postfix expression
+// -------- NOT WORKING -------------------------
+
 // ---------------- header files----------------
 #include<iostream>
 #include <ctype.h>
