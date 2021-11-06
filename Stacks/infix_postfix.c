@@ -1,4 +1,4 @@
-
+// program to convert an infix expression into a postfix expression
 
 // ---------------- header files---------------- 
 #include <stdio.h>
