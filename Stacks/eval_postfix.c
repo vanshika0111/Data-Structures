@@ -6,7 +6,7 @@
 
 // ---------------- global declarations---------------- 
 char stack[30];
-// char expression[30], *exp;
+char expression[30], *exp;
 int top=-1;
 float value;
 
@@ -18,12 +18,12 @@ float evaluate(void);
 // ---------------- main function---------------- 
 int main()
 {
-    char expression[30], *exp;
+    // char expression[30], *exp;
     printf("Enter a postfix expression to evaluate: ");
     scanf("%s", &expression);
     exp = expression;
     printf("\n");
-    printf("The value of postfix expression is ", evaluate());
+    printf("The value of postfix expression is %.2f", evaluate());
     printf("\n");
     return 0;
 }
@@ -42,7 +42,7 @@ char pop(void)
 
 float evaluate(void)
 {
-    char *exp;
+    // char *exp;
     float operand1, operand2, answer;
 
     while (*exp != '\0')
@@ -74,5 +74,6 @@ float evaluate(void)
         }
         exp++;
     }
+    // printf("%.2f", answer);
     return (pop());  
 }
