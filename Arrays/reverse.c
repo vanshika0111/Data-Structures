@@ -10,7 +10,7 @@ int main()
 	printf("Creating the array: \n");
 	for(i=0; i<5; i++)
  	{
-         printf("Element %d: ", i+1);	 
+        printf("Element %d: ", i+1);	 
  		scanf("%d", &array[i]);
 	}
     printf("\n");	
