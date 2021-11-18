@@ -7,7 +7,7 @@ Operations applied in queue are:
 	2. Dequeue ~ deletion
 
 Types of queues:
-	1. Linear queue
+	1. Linear/simple queue
 	2. Circular queue
 	3. Deque/ Double-ended queue
 	4. Priority queue (sscending & descending priority queue)
