@@ -3,8 +3,9 @@ Queue (FIFO) has two pointers --> Rear and front
 Generally, rear is used for deletion while front is used for insertion.
 
 Operations applied in queue are:
-	1. Enqueue ~ insertion
-	2. Dequeue ~ deletion
+	1. Enqueue ~ insertion: REAR end
+	2. Dequeue ~ deletion: FRONT end
+	3. Display
 
 Types of queues:
 	1. Linear/simple queue

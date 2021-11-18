@@ -1,10 +1,11 @@
 // program to illustrate all the operations of stack in one program
 
+// --------------------------- header files -------------------------
 #include<iostream>
 #define MAX 5
 using namespace std;
 
-// global declaration
+// --------------------------- global declaration -------------------------
 int stack[MAX] = {1,2,3,4}, top=3, i, value, choice;
 
 // function protoype
@@ -16,6 +17,7 @@ void display_push(void);
 void display_pop(void);
 // instead use one display function for both push and pop
 
+// --------------------------- main function -------------------------
 int main()
 {
     do
@@ -52,6 +54,7 @@ int main()
     return 0;
 }
 
+// --------------------------- function definitions -------------------------
 void choice_list(void)
 {
     cout << "------------------------------------------" << endl;
