@@ -54,6 +54,7 @@ int main()
 
 void choice_list(void)
 {
+    cout << "------------------------------------------" << endl;
     cout << "List of operations performed on stack is: " << endl;
     cout << "1. Push" << endl
          << "2. Pop" << endl
