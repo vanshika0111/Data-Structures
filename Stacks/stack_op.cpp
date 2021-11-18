@@ -11,7 +11,7 @@ int stack[MAX] = {1,2,3,4}, top=3, i, value, choice;
 void choice_list(void);
 int push(int stack[], int value);
 int pop(int stack[]);
-int peek(int stack[]);
+int peep(int stack[]);
 void display_push(void);
 void display_pop(void);
 // instead use one display function for both push and pop
@@ -34,7 +34,7 @@ int main()
                 display_pop();
                 break;
             case 3:
-                value = peek(stack);
+                value = peep(stack);
                 if (value != 1)
                 {
                     cout << "The top pointing element of the stack is " << value << endl;
@@ -58,7 +58,7 @@ void choice_list(void)
     cout << "List of operations performed on stack is: " << endl;
     cout << "1. Push" << endl
          << "2. Pop" << endl
-         << "3. Peek" << endl
+         << "3. Peep" << endl
          << "4. Exit" << endl;
     cout << "Enter your choice: ";
     cin >> choice;
@@ -96,7 +96,7 @@ int pop(int stack[])
     }
 }
 
-int peek(int stack[])
+int peep(int stack[])
 {
     if(top == -1)
     {
