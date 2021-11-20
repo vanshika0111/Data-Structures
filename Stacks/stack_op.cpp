@@ -8,7 +8,7 @@ using namespace std;
 // --------------------------- global declaration -------------------------
 int stack[MAX] = {1,2,3,4}, top=3, i, value, choice;
 
-// function protoype
+// --------------------------- function protoype ---------------------------
 void choice_list(void);
 int push(int stack[], int value);
 int pop(int stack[]);
