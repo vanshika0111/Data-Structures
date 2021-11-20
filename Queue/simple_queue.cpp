@@ -6,8 +6,8 @@
 using namespace std;
 
 // --------------------------- global declaration -------------------------
-int queue[MAX] = {1,2,3,4}, i, value, choice;
-int front = 0, rear = 3;
+int queue[MAX], i, value, choice;
+int front = -1, rear = -1;
 
 // --------------------------- function prototype -------------------------
 void ChoiceList(void);
@@ -19,7 +19,7 @@ void display(void);
 int main()
 {
     cout << "Queue: ";
-    display();
+    // display();
     do
     {
         ChoiceList();
@@ -65,7 +65,7 @@ void ChoiceList(void)
     cout << endl;
 }
 
-int enqueue(int)
+int enqueue(int value)
 {
     if (rear == MAX - 1)
     {
@@ -73,7 +73,7 @@ int enqueue(int)
     }
     else 
     {
-        if (rear = front == -1)
+        if (rear == -1 && front == -1)
         {
             rear = 0;
             front = 0;
@@ -105,16 +105,15 @@ void display(void)
 {
     if (front == -1 || front > rear)
     {
-        cout << "Queue underflow!" << endl;
+        cout << "Queue is empty!" << endl;
     }
     else
     {
         cout << "[ ";
-        for(i=0; i<MAX; i++)
+        for(i=front; i<= rear; i++)
         {
             cout << queue[i] << " ";
         }
         cout << "]" << endl;
     }
-
 }
