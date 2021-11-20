@@ -18,7 +18,7 @@ void display(void);
 // --------------------------- main function -------------------------
 int main()
 {
-    cout << "Queue: ";
+    // cout << "Queue: ";
     // display();
     do
     {
