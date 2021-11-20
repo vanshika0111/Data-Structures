@@ -4,11 +4,11 @@
 
 int main()
 {
-    int array[5];
+    int array[3];
 	int i;
 
 	printf("Creating the array: \n");
-	for(i=0; i<5; i++)
+	for(i=0; i<3; i++)
  	{
         printf("Element %d: ", i+1);	 
  		scanf("%d", &array[i]);
@@ -17,7 +17,7 @@ int main()
 
     printf("Displaying the array: \n");
     printf("[");
-    for(i=0;i<5;i++)
+    for(i=0;i<3;i++)
  	{	 
  		printf(" %d ",array[i]);
 	}
@@ -25,7 +25,7 @@ int main()
 
 	printf("Reversing the array:\n");
     printf("[");
-	for(i=4;i>=0;i--)
+	for(i=2;i>=0;i--)
  	{	 
  		printf(" %d ",array[i]);	
  	}
