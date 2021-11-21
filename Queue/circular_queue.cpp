@@ -53,7 +53,7 @@ int main()
 void ChoiceList(void)
 {
     cout << " ---------------------------------------" << endl
-         << "List of operations performed on queue: " << endl
+         << "List of operations performed on circular queue: " << endl
          << "1. Enqueue " << endl
          << "2. Dequeue " << endl
          << "3. Display " << endl
