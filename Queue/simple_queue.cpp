@@ -1,4 +1,5 @@
 // program to illustrate all the operations of queue in one program
+//  REAR --> Insertion  FRONT --> Deletion
 
 // --------------------------- header files -------------------------
 #include<iostream>
