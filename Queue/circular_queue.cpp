@@ -12,9 +12,9 @@ int front = -1, rear = -1;
 
 // --------------------------- function prototype -------------------------
 void ChoiceList(void);
-int enqueue(int);
-int dequeue(void);
-void display(void);
+int enqueue_Circular(int);
+int dequeue_Circular(void);
+void display_Circular(void);
 
 // --------------------------- main function -------------------------
 int main()
@@ -27,15 +27,15 @@ int main()
             case 1:
                 cout << "Enter a number to be inserted: ";
                 cin >> value;
-                enqueue(value);
-                display();
+                enqueue_Circular(value);
+                display_Circular();
                 break;
             case 2:
-                value = dequeue();
-                display();
+                value = dequeue_Circular();
+                display_Circular();
                 break;
             case 3:
-                display();
+                display_Circular();
                 break;
             case 4:
                 exit(0);
@@ -63,7 +63,7 @@ void ChoiceList(void)
     cout << endl;
 }
 
-int enqueue(int value)
+int enqueue_Circular(int value)
 {
     if( ( front == 0 && rear == MAX-1 ) || ( front == rear+1 ) )
     {
@@ -92,11 +92,11 @@ int enqueue(int value)
     }
 }
 
-int dequeue(void)
+int dequeue_Circular(void)
 {
-    if ( front == -1 )
+    if ( front == -1 || front == rear + 1)
     {
-        cout << "Queue inderflow!" << endl;
+        cout << "Queue underflow!" << endl;
     }
     else
     {
@@ -118,9 +118,9 @@ int dequeue(void)
     }
 }
 
-void display(void)
+void display_Circular(void)
 {
-    if ( front == -1)
+    if ( front == -1 || front == rear + 1 )
     {
         cout << "Queue is empty!" << endl;
     }
