@@ -16,24 +16,24 @@ int priority(char);
 // ---------------- main function---------------- 
 int main()
 {
-    char expression[30], *exp, x;
+    char postfix[30], *pf, x;
     printf("Enter the expression: ");
-    scanf("%s", &expression);
+    scanf("%s", &postfix);
     printf("\n");
 
-    exp = expression;
+    pf = postfix;
 
-    while (*exp != '\0')
+    while (*pf != '\0')
     {
-        if (isalnum(*exp))
+        if (isalnum(*pf))
         {
-            printf("%c", *exp);
+            printf("%c", *pf);
         }
-        else if (*exp == '(')
+        else if (*pf == '(')
         {
-            push (*exp);
+            push (*pf);
         }
-        else if (*exp == ')')
+        else if (*pf == ')')
         {
             while( (x = pop() ) != '(')
             {
@@ -42,13 +42,13 @@ int main()
         }
         else
         {
-            while (priority(stack[top]) >= priority(*exp))
+            while (priority(stack[top]) >= priority(*pf))
             {
                 printf("%c", pop());
             }
-            push(*exp);
+            push(*pf);
         }   
-        exp++;     
+        pf++;     
     }
     while (top != -1)
     {
