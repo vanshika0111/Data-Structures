@@ -1,9 +1,9 @@
-// program to implement Circular Queue using arrays to performs following operations: (a) INSERT (b) DELETE (c) DISPLAY
+// program to implement Circular Queue using array to perform the following operations: (a) INSERT (b) DELETE (c) DISPLAY
 //  REAR --> Insertion  FRONT --> Deletion
 
 // --------------------------- header files -------------------------
 #include<iostream>
-#define MAX 10
+#define MAX 5
 using namespace std;
 
 // --------------------------- global declarations -------------------------
@@ -27,14 +27,17 @@ int main()
             case 1:
                 cout << "Enter a number to be inserted: ";
                 cin >> value;
+                cout << "front = " << front << " rear = " << rear << endl;
                 enqueue_Circular(value);
                 display_Circular();
                 break;
             case 2:
+                cout << "front = " << front << " rear = " << rear << endl;
                 value = dequeue_Circular();
                 display_Circular();
                 break;
             case 3:
+                cout << "front = " << front << " rear = " << rear << endl;
                 display_Circular();
                 break;
             case 4:
@@ -65,7 +68,8 @@ void ChoiceList(void)
 
 int enqueue_Circular(int value)
 {
-    if( ( front == 0 && rear == MAX-1 ) || ( front == rear+1 ) )
+    // if( ( front == 0 && rear == MAX-1 ) || ( front == rear+1 ) )
+    if( front == 0 && rear == MAX-1 )
     {
         cout << "Queue overflow!" << endl;
     }
@@ -73,16 +77,19 @@ int enqueue_Circular(int value)
     {
         if( rear != MAX-1 )
         {
+            cout << "condition 1 " << endl;
             rear = rear + 1;
             // queue[rear] = value;
         }
         else if (rear == MAX - 1 && front != 0)
         {
+            cout << "condition 2 " << endl;
             queue[rear] = 0;
             // queue[rear] = value;
         }
-        else if (front == -1)
+        else if (front == -1 && rear == -1)
         {
+            cout << "condition 3 " << endl;
             front = 0;
             rear = 0;
             // queue[rear] = value;
@@ -94,7 +101,8 @@ int enqueue_Circular(int value)
 
 int dequeue_Circular(void)
 {
-    if ( front == -1 || front == rear + 1)
+    // if ( front == -1 || front == rear + 1)
+    if ( front == -1 && rear == -1)
     {
         cout << "Queue underflow!" << endl;
     }
@@ -120,27 +128,28 @@ int dequeue_Circular(void)
 
 void display_Circular(void)
 {
-    if ( front == -1 || front == rear + 1 )
+    // if ( front == -1 || front == rear + 1 )
+    if ( front == -1 && rear == -1)
     {
         cout << "Queue is empty!" << endl;
     }
     else
     {
         cout << "[ ";
-        if (rear >= front)
+        if (front < rear)
         {
-            for (int i = front; i <= rear; i++)
+            for (i = front; i <= rear; i++)
             {
                 cout << queue[i] << " ";
             }
         }
         else
         {
-            for (int i = front; i < MAX; i++)
+            for (i = front; i < MAX; i++)
             {
                 cout << queue[i] << " ";
             }
-            for (int i = 0; i <= rear; i++)
+            for (i = 0; i <= rear; i++)
             {
                 cout << queue[i] << " ";
             }
