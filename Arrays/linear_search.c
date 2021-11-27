@@ -12,7 +12,7 @@ int LinearSearch(int arr[], int size, int element)
     {
         if (arr[i] == element)
         {
-            return i;
+            return i+1;
         }
     }
     return -1;
