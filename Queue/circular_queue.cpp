@@ -70,8 +70,8 @@ void ChoiceList(void)
 int enqueue_Circular(int value)
 {
     cout << "Function" << endl;
-    // if( ( front == 0 && rear == MAX-1 ) || ( front == rear+1 ) )
-    if( front == 0 && rear == MAX-1 )
+    if( ( front == 0 && rear == MAX-1 ) || ( front == rear+1 ) )
+    // if( front == 0 && rear == MAX-1 )
     {
         cout << "Queue overflow!" << endl;
     }
@@ -86,7 +86,7 @@ int enqueue_Circular(int value)
         else if (rear == MAX - 1 && front != 0)
         {
             cout << "condition 2 " << endl;
-            queue[rear] = 0;
+            rear = 0;
             // queue[rear] = value;
         }
         else if (front == -1 && rear == -1)
@@ -99,6 +99,7 @@ int enqueue_Circular(int value)
         queue[rear] = value;
         cout << "Value inserted is " << value << endl;
     }
+    return value;
 }
 
 int dequeue_Circular(void)
@@ -126,6 +127,7 @@ int dequeue_Circular(void)
         }
         cout << "Element deleted is " << value << endl;
     }
+    return value;
 }
 
 void display_Circular(void)
