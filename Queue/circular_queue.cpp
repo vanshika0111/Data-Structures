@@ -56,6 +56,7 @@ int main()
 // --------------------------- function definitions -------------------------
 void ChoiceList(void)
 {
+    cout << endl;
     cout << " ---------------------------------------" << endl
          << "List of operations performed on circular queue: " << endl
          << "1. Enqueue " << endl
@@ -64,6 +65,7 @@ void ChoiceList(void)
          << "4. Exit" << endl
          << "Enter your choice: ";
     cin >> choice;
+    cout << endl;
     cout << endl;
 }
 
@@ -77,22 +79,21 @@ int enqueue_Circular(int value)
     }
     else
     {
-        if( rear != MAX-1 )
+        if (front == -1 && rear == -1)
+        {
+            cout << "condition 3 " << endl;
+            front = 0;
+            rear = 0;
+        }
+        else if( rear != MAX-1 )
         {
             cout << "condition 1 " << endl;
-            rear = rear + 1;
+            rear++;
             // queue[rear] = value;
         }
         else if (rear == MAX - 1 && front != 0)
         {
             cout << "condition 2 " << endl;
-            rear = 0;
-            // queue[rear] = value;
-        }
-        else if (front == -1 && rear == -1)
-        {
-            cout << "condition 3 " << endl;
-            front = 0;
             rear = 0;
             // queue[rear] = value;
         }
@@ -123,7 +124,8 @@ int dequeue_Circular(void)
         }
         else
         {
-            front = front + 1;
+            queue[front]=0;
+            front++;
         }
         cout << "Element deleted is " << value << endl;
     }
@@ -132,32 +134,39 @@ int dequeue_Circular(void)
 
 void display_Circular(void)
 {
-    // if ( front == -1 || front == rear + 1 )
-    if ( front == -1 && rear == -1)
-    {
-        cout << "Queue is empty!" << endl;
+    // // if ( front == -1 || front == rear + 1 )
+    // if ( front == -1 && rear == -1)
+    // {
+    //     cout << "Queue is empty!" << endl;
+    // }
+    // else
+    // {
+    //     cout << "[ ";
+    //     if (front < rear)
+    //     {
+    //         for (i = front; i <= rear; i++)
+    //         {
+    //             cout << "Condiiton 1 in display" << endl;
+    //             cout << queue[i] << " ";
+    //         }
+    //     }
+    //     else
+    //     {
+    //         for (i = front; i < MAX; i++)
+    //         {
+    //             cout<<"condition 2 in display"<<endl;
+    //             cout << queue[i] << " ";
+    //         }
+    //         for (i = 0; i <= rear; i++)
+    //         {
+    //             cout << queue[i] << " ";
+    //         }
+    //     }
+    //     cout << "]" << endl;
+    // }
+    cout << "[ ";
+    for(int i=0;i<MAX;i++){
+        cout<<queue[i]<< " " ;
     }
-    else
-    {
-        cout << "[ ";
-        if (front < rear)
-        {
-            for (i = front; i <= rear; i++)
-            {
-                cout << queue[i] << " ";
-            }
-        }
-        else
-        {
-            for (i = front; i < MAX; i++)
-            {
-                cout << queue[i] << " ";
-            }
-            for (i = 0; i <= rear; i++)
-            {
-                cout << queue[i] << " ";
-            }
-        }
-        cout << "]" << endl;
-    }
+    cout << "]" << endl;
 }
