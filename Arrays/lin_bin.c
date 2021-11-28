@@ -67,7 +67,7 @@ void LinearData (void)
     scanf ("%d", &element);
     printf(" \n ");
     search = LinearSearch(size, element);
-    printf("The element %d was found at index %d \n", element, search);
+    printf("The element %d was found at position %d \n", element, search);
 }
 
 int LinearSearch (int size, int element)
@@ -95,7 +95,7 @@ void BinaryData (void)
     scanf ("%d", &element);
     printf(" \n ");
     search = BinarySearch(size, element);
-    printf("The element %d was found at index %d \n", element, search);
+    printf("The element %d was found at position %d \n", element, search+1);
 }
 
 int BinarySearch (int size, int element)
@@ -111,9 +111,13 @@ int BinarySearch (int size, int element)
         {
             return mid;
         }
-        if(binary[mid] < element)
+        else if(binary[mid] < element)
         {
             low = mid + 1;
+        }
+        else 
+        {
+            high = mid - 1;
         }
     }
     return -1; 

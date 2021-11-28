@@ -19,9 +19,13 @@ int BinarySearch(int arr[], int size, int element)
         {
             return mid;
         }
-        if(arr[mid] < element)
+        else if(arr[mid] < element)
         {
             low = mid + 1;
+        }
+        else 
+        {
+            high = mid - 1;
         }
     }
     return -1;  // only if the element is not present in the array
