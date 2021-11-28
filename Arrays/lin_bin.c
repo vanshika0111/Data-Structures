@@ -1,4 +1,4 @@
-// program to implement linear search and the binary search.
+// program to implement linear search and binary search.
 
 // ------------------ header files --------------------
 #include<stdio.h>
