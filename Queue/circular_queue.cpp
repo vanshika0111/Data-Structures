@@ -27,7 +27,6 @@ int main()
             case 1:
                 cout << "Enter a number to be inserted: ";
                 cin >> value;
-                // cout << "main" << endl;
                 cout << "front = " << front << " rear = " << rear << endl;
                 enqueue_Circular(value);
                 display_Circular();
@@ -71,7 +70,6 @@ void ChoiceList(void)
 
 int enqueue_Circular(int value)
 {
-    // cout << "Function" << endl;
     if( ( front == 0 && rear == MAX-1 ) || ( front == rear+1 ) )
     // if( front == 0 && rear == MAX-1 )
     {
@@ -81,21 +79,19 @@ int enqueue_Circular(int value)
     {
         if (front == -1 && rear == -1)
         {
-            cout << "condition 3 " << endl;
+            // cout << "condition 1 " << endl;
             front = 0;
             rear = 0;
         }
         else if( rear != MAX-1 )
         {
-            cout << "condition 1 " << endl;
+            // cout << "condition 2 " << endl;
             rear++;
-            // queue[rear] = value;
         }
         else if (rear == MAX - 1 && front != 0)
         {
-            cout << "condition 2 " << endl;
+            // cout << "condition 3 " << endl;
             rear = 0;
-            // queue[rear] = value;
         }
         queue[rear] = value;
         cout << "Value inserted is " << value << endl;
@@ -165,8 +161,8 @@ void display_Circular(void)
     //     cout << "]" << endl;
     // }
     cout << "[ ";
-    for(int i=0;i<MAX;i++){
-        cout<<queue[i]<< " " ;
+    for(int i=0; i<MAX; i++){
+        cout << queue[i] << " " ;
     }
     cout << "]" << endl;
 }
