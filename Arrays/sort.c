@@ -4,7 +4,7 @@
 #include<stdio.h>
 
 // ------------------ global declarations --------------------
-int choice;
+int choice, temp;
 int array[7] = {3,6,1,9,0,2,5};
 
 // ------------------ function prototype --------------------
@@ -16,20 +16,22 @@ void Selection (void);
 // ------------------ main function --------------------
 int main()
 {
+    printf ("Before sorting: ");
+    Display();
     do 
     {
         List();
-        printf ("Before sorting: ");
-        Display();
-        printf ("Sorting the array ... \n");
+        
         switch (choice)
         {
         case 1:
+            printf ("Applying bubble sort... \n");
             Bubble();
             printf ("After sorting: ");
             Display();
             break;
         case 2:
+            printf ("Applying selection sort... \n");
             Selection();
             printf ("After sorting: ");
             Display();
@@ -50,7 +52,7 @@ void List(void)
 {
     printf (" ------------------------------ \n");
     printf (" List of sorting methods: \n");
-    printf (" 1. Bubbke sort \n");
+    printf (" 1. Bubble sort \n");
     printf (" 2. Selection sort \n");
     printf (" 3. Exit \n");
     printf (" Enter your choice: ");
@@ -69,13 +71,12 @@ void Display (void)
 }
 
 void Bubble (void)
-{
-    int temp;
-    for (int i=0; i<6; i++)
+{ 
+    for (int i=0; i<5; i++)
     {
-        for (int j=i+1; j<=7; j++)
+        for (int j=0; j<=5-i; j++)
         {
-            if (array[j] > array[i])
+            if (array[j] > array[j+1])
             {
                 temp = array[j];
                 array[j] = array[j+1];
@@ -87,5 +88,18 @@ void Bubble (void)
 
 void Selection (void)
 {
-
+    for(int i=0; i<5; i++)
+    {
+        int position = i;
+        for(int j=i+1; j<6; j++)
+        {
+            if(array[j]<array[position])
+            {
+                position = j;
+            }
+        }
+        temp = array[position];
+        array[position] = array[i];
+        array[i] = temp;
+    }
 }
