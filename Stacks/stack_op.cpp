@@ -141,7 +141,7 @@ void display_pop(void)
     {
         cout << "Stack:" << endl;
         cout << "[ ";
-        for(i=0; i<MAX-1; i++)
+        for(i=0; i<top+1; i++)
         {          
             cout << stack[i] << " " ;
         }
