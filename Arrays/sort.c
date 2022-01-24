@@ -12,6 +12,7 @@ void List(void);
 void Display (void);
 void Bubble (void);
 void Selection (void);
+void Insertion (void);
 
 // ------------------ main function --------------------
 int main()
@@ -37,13 +38,19 @@ int main()
             Display();
             break;
         case 3:
+            printf ("Applying insertion sort... \n");
+            Insertion();
+            printf ("After sorting: ");
+            Display();
+            break;
+        case 4:
             exit(0);
             break;
         default:
             printf ("Invalid choice! \n");
             break;
         }      
-    } while (choice != 3);
+    } while (choice != 4);
     return 0;
 }
 
@@ -54,7 +61,8 @@ void List(void)
     printf (" List of sorting methods: \n");
     printf (" 1. Bubble sort \n");
     printf (" 2. Selection sort \n");
-    printf (" 3. Exit \n");
+    printf (" 3. Insertion sort \n");
+    printf (" 4. Exit \n");
     printf (" Enter your choice: ");
     scanf ("%d", &choice);
     printf (" \n ");
@@ -102,4 +110,21 @@ void Selection (void)
         array[position] = array[i];
         array[i] = temp;
     }
+}
+
+void Insertion (void)
+{
+    int j;
+    int n = sizeof(array)/ sizeof(array[0]);
+    for (int i=1; i<n; i++)
+    {
+        temp = array[i];
+        j = i-1;
+    }
+    while (j>=0 && temp < array[j])
+    {
+        array[j+1] = array[j];
+        j--;
+    }
+    array[j+1] = temp;
 }
